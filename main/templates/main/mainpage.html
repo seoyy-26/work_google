@@ -4,16 +4,16 @@
 
 {% block content %} 
   <div class="container">
-    <img src="https://img.insight.co.kr/static/2019/04/03/700/4cbsd123234t969i68d5.jpg" alt="한강 사진" width="1245">
+    <img src="{%static 'images/image1.jpg'%}" alt="한강 사진" width="1250">
   </div>
 
   <br>
   <div class="image">
     
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMeQqCSMFSmR0FekL_qvh9xizBAoZieXfT1fqH1gsVrjWQZUrdD4Cv1t-jnEUgprc1MU&usqp=CAU" alt="인사 사진" width="300" height="300">
+    <img src="{%static 'images/image2.png'%}" alt="인사 사진" width="300" height="300">
     
-    <img src="https://pbs.twimg.com/profile_images/975321969649336320/VuUg1XZy_400x400.jpg" alt="말풍선 사진" width="400" height="300">
-    <img src="{% static 'images/image01.jpg' %}" alt="멋사 사진" width="100" height="100"> 
+    <img src="{%static 'images/image3.jpg'%}" alt="말풍선 사진" width="400" height="300">
+    
  
   </div>
 
@@ -34,5 +34,23 @@
     <p>저에 대한 구체적인 정보는</p>
     <p>다음 페이지에서 보여드릴게요!</p>
   </div>
+
+  <h2><a href="{%url 'main:new'%}">글쓰기</a></h2>
+  
+  <h1>글 목록</h1>
+  <div>
+    {% for post in posts %} 
+    <div>
+      <h3>{{post.title}}</h3>
+      {{post.writer}}<br>
+      {{post.summary}}
+      <a href="{%url 'main:detail' post.id%}">...자세히</a>
+      <br>
+    </div>
+    {%endfor%}
+  </div>
+
+
+
 {% endblock %}
   

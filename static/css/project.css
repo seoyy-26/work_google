@@ -7,7 +7,7 @@
 }
 
 body {
-  
+ 
   background-color: lightblue !important;
 }
 
@@ -42,10 +42,10 @@ h5 {
 }
 
 table, td {
-  width: 1200px;
+  width: 1300px;
   margin: auto;
   border: 1px solid; 
-  
+   
 } 
 
 .imagewoman {
@@ -56,7 +56,6 @@ table, td {
 
 .container {
   position: relative;
-   
   height: auto;
   opacity: 0.8;
 }
